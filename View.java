@@ -20,9 +20,22 @@ public class View implements ActionListener, PropertyChangeListener
 	private JButton go = new JButton("Go");
 	private JLabel finished = new JLabel("Process Status:");
 
+	//new label "clickLabel" to be added to the consturtor and the
+	//pane within the constructor
+	//--Zack
+	private JLabel clickLabel = new JLabel("Click 'click me' button to increase number on click counter");
+	//new clickMe button added --Zack
+	private JButton clickMe = new JButton("Click Me!");
+
+
 	private JTextField input = new JTextField();
 
 	private JPanel inputPanel = new JPanel(new FlowLayout());
+
+	//added a clickInputPanel where the click button and text
+	//label will sit once added to the pane in the constructor
+	//--Zack
+	private JPanel clickInputPanel = new JPanel(new FlowLayout());
 
 	private JPanel insertionPanel = new JPanel(new FlowLayout());
 	
@@ -56,17 +69,30 @@ public class View implements ActionListener, PropertyChangeListener
         inputPanel.add(inputLabel);
 		inputPanel.add(input);
 		inputPanel.add(go);
+		
 		insertionPanel.add(insertionLabel);
 		insertionPanel.add(insertionBar);
 		quickPanel.add(quickLabel);
 		quickPanel.add(quickBar);
 
+		//new clickInputPanel to be added to the
+		//pane
+		//new button clickMe --Zack
+		clickInputPanel.add(clickLabel);
+		clickInputPanel.add(clickMe);
+
 		pane.add(inputPanel);
 		pane.add(insertionPanel);
 		pane.add(quickPanel);
 		pane.add(finished);
+		//adds the new click button panel called "clickInputPanel" to
+		//the window pane that's being created.
+		//--Zack
+		pane.add(clickInputPanel);
 
 		go.addActionListener(this);
+		//added new action listener for clickMe button --Zack
+		clickMe.addActionListener(this);
 
 		frame.add(pane);
 		frame.pack();
