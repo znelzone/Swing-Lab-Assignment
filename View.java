@@ -75,8 +75,8 @@ public class View implements ActionListener, PropertyChangeListener
 		quickPanel.add(quickLabel);
 		quickPanel.add(quickBar);
 
-		//new clickInputPanel to be added to the
-		//pane
+		//location for where the clickPanel stuff gets added to the clickPanel
+		//that then gets added to the pane
 		//new button clickMe --Zack
 		clickInputPanel.add(clickLabel);
 		clickInputPanel.add(clickMe);
