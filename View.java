@@ -23,7 +23,7 @@ public class View implements ActionListener, PropertyChangeListener
 	//new label "clickLabel" to be added to the consturtor and the
 	//pane within the constructor
 	//--Zack
-	private JLabel clickLabel = new JLabel("Click 'click me' button to increase number on click counter");
+	private JLabel clickLabel = new JLabel("Click 'Click Me!' button to increase number on click counter:");
 	//new clickMe button added --Zack
 	private JButton clickMe = new JButton("Click Me!");
 
