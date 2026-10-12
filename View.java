@@ -18,7 +18,16 @@ public class View implements ActionListener, PropertyChangeListener
 
 	private JLabel inputLabel = new JLabel("Enter number between 1000 and 1000000");
 	private JButton go = new JButton("Go");
-	private JLabel finished = new JLabel("Process Status:");
+	// making adjustments of the "finished" JLabel...(picking this comment back up after
+	//finalizing edits of the code)...Commented out the og JLabel "finished" that used
+	//to be used to print out the process status of both Quick and Insertion sort at the
+	//same time. -- Zack
+	// private JLabel finished = new JLabel("Process Status:");
+	//the two new JLabels bellow are adjusted version of the finished JLabel above that
+	//split up the responsibility of tracking the sorting status between the two seperate
+	//sorting processes. --Zack
+	private JLabel insertionSortFinished = new JLabel("Insertion Sort Process Status:");
+	private JLabel quickSortFinished = new JLabel("Quick Sort Process Status:");
 
 	//new label "clickLabel" to be added to the consturtor and the
 	//pane within the constructor
@@ -84,7 +93,16 @@ public class View implements ActionListener, PropertyChangeListener
 		pane.add(inputPanel);
 		pane.add(insertionPanel);
 		pane.add(quickPanel);
-		pane.add(finished);
+		//comented out pane.add bellow for the finished process status
+		//is left here for study purposes. --Zack
+		// pane.add(finished);
+		//the two panes bellow are replacements for the finished pane above
+		//previously the finished pane was used to print the status of the 
+		//sorting algorithms together. They are now seperated out into two
+		//distinct insertionsSort and quickSort finished panes -- Zack
+		pane.add(insertionSortFinished);
+		pane.add(quickSortFinished);
+
 		//adds the new click button panel called "clickInputPanel" to
 		//the window pane that's being created.
 		//--Zack
@@ -188,12 +206,22 @@ public class View implements ActionListener, PropertyChangeListener
 			    if (progress == 100) 
 				{
 				    insertionBar.setValue(progress);
-				    finished.setText("Process Status: complete");
+					//commented out code bellow is the og code that
+					//was here before. I'm leaving it here, comented out
+					//so as to be here for studying purposes -- Zack
+				    // finished.setText("Process Status: complete");
+					//insetion sorting is complete -- Zack
+					insertionSortFinished.setText("Insertion Sort Process Status: complete");
 			    }
 			    else 
 			    {
-				    finished.setText("Process Status: running");
-				    insertionBar.setValue(progress);
+					//same as was said in the commented statements
+					//in the if above -- Zack
+				    // finished.setText("Process Status: running");
+					//added this to set the process status to running when 
+					//insertion sorting is still running -- Zack
+					insertionSortFinished.setText("Insertion Sort Process Status: running");
+					insertionBar.setValue(progress);
 			    }
             }
 		}
@@ -205,11 +233,25 @@ public class View implements ActionListener, PropertyChangeListener
 				if (progress == 100) 
 				{
 					quickBar.setValue(progress);
-					finished.setText("Process Status: complete");
+					//copy of the same comments made for the insertion sort finished process
+					//commented out code bellow is the og code that
+					//was here before. I'm leaving it here, comented out
+					//so as to be here for studying purposes -- Zack
+					// finished.setText("Process Status: complete");
+					//added the setText for quick sort finished process status to be complete
+					//once the QuickSortDemo is compelete --Zack
+					quickSortFinished.setText("Quick Sort Process Status: complete");
 				}
 				else 
 				{
-					finished.setText("Process Status: running");
+					//copy of the same comments made for the insertion sort finished process
+					//commented out code bellow is the og code that
+					//was here before. I'm leaving it here, comented out
+					//so as to be here for studying purposes -- Zack
+					// finished.setText("Process Status: running");
+					//added the setText for quick sort finished process status to be running
+					//while the QuickSortDemo is running --Zack
+					quickSortFinished.setText("Quick Sort Process Status: running");
 					quickBar.setValue(progress);
 				}
 			}
