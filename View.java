@@ -210,6 +210,7 @@ public class View implements ActionListener, PropertyChangeListener
 					//was here before. I'm leaving it here, comented out
 					//so as to be here for studying purposes -- Zack
 				    // finished.setText("Process Status: complete");
+					
 					//insetion sorting is complete -- Zack
 					insertionSortFinished.setText("Insertion Sort Process Status: complete");
 			    }
@@ -218,6 +219,7 @@ public class View implements ActionListener, PropertyChangeListener
 					//same as was said in the commented statements
 					//in the if above -- Zack
 				    // finished.setText("Process Status: running");
+
 					//added this to set the process status to running when 
 					//insertion sorting is still running -- Zack
 					insertionSortFinished.setText("Insertion Sort Process Status: running");
@@ -238,6 +240,7 @@ public class View implements ActionListener, PropertyChangeListener
 					//was here before. I'm leaving it here, comented out
 					//so as to be here for studying purposes -- Zack
 					// finished.setText("Process Status: complete");
+
 					//added the setText for quick sort finished process status to be complete
 					//once the QuickSortDemo is compelete --Zack
 					quickSortFinished.setText("Quick Sort Process Status: complete");
@@ -249,6 +252,7 @@ public class View implements ActionListener, PropertyChangeListener
 					//was here before. I'm leaving it here, comented out
 					//so as to be here for studying purposes -- Zack
 					// finished.setText("Process Status: running");
+
 					//added the setText for quick sort finished process status to be running
 					//while the QuickSortDemo is running --Zack
 					quickSortFinished.setText("Quick Sort Process Status: running");
