@@ -14,7 +14,7 @@ import java.util.Random;
 public class View implements ActionListener, PropertyChangeListener
 {
 	private JFrame frame = new JFrame("Thread Sorts Demo");
-	private JPanel pane = new JPanel(new GridLayout(6,1));
+	private JPanel pane = new JPanel(new GridLayout(7,1));
 
 	private JLabel inputLabel = new JLabel("Enter number between 1000 and 1000000");
 	private JButton go = new JButton("Go");
@@ -35,7 +35,10 @@ public class View implements ActionListener, PropertyChangeListener
 	private JLabel clickLabel = new JLabel("Click 'Click Me!' button to increase number on click counter:");
 	//new clickMe button added --Zack
 	private JButton clickMe = new JButton("Click Me!");
-
+	//new clickCounterCount
+	private int clickCount = 0;
+	//new clickCounter display
+	private JLabel clickCounter = new JLabel("Click Counter: " + clickCount);
 
 	private JTextField input = new JTextField();
 
@@ -89,6 +92,7 @@ public class View implements ActionListener, PropertyChangeListener
 		//new button clickMe --Zack
 		clickInputPanel.add(clickLabel);
 		clickInputPanel.add(clickMe);
+		clickInputPanel.add(clickCounter);
 
 		pane.add(inputPanel);
 		pane.add(insertionPanel);
@@ -107,6 +111,8 @@ public class View implements ActionListener, PropertyChangeListener
 		//the window pane that's being created.
 		//--Zack
 		pane.add(clickInputPanel);
+		//LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+		pane.add(clickCounter);
 
 		go.addActionListener(this);
 		//added new action listener for clickMe button --Zack
@@ -129,7 +135,7 @@ public class View implements ActionListener, PropertyChangeListener
 	{
 		if(arg0.getSource() == go)
 		{
-			
+
 			try{
 			if(Integer.parseInt(input.getText()) > 1000000 || Integer.parseInt(input.getText()) < 1000)
 				JOptionPane.showMessageDialog(null, "Enter an integer between 1000 and 1000000");
@@ -144,8 +150,13 @@ public class View implements ActionListener, PropertyChangeListener
 			{
 				JOptionPane.showMessageDialog(null, "Input must be an integer between 1000 and 1000000");
 			}
-				
-				
+		}
+		// adds and updates clickCount
+		else if (arg0.getSource() == clickMe)
+		{
+			clickCount++;
+			clickCounter.setText("Click Counter: " + clickCount);
+
 		}
 	}
 	
